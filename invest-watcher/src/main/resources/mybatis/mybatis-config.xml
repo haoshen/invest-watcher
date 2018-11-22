@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+        <typeAlias alias="realTimeMarket" type="com.haoshen.money.entity.RealTimeMarket" />
+        <typeAlias alias="hold" type="com.haoshen.money.entity.Hold" />
+        <typeAlias alias="oprationRecord" type="com.haoshen.money.entity.OperationRecord" />
+    </typeAliases>
+</configuration>

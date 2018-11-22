@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.haoshen.money.mapper.HoldMapper">
+
+    <resultMap id="holdMap" type="com.haoshen.money.entity.Hold">
+        <id property="id" column="id" />
+        <result property="investId" column="invest_id" />
+        <result property="direction" column="direction" />
+        <result property="currentPrice" column="current_price" />
+        <result property="currentNum" column="current_num" />
+        <result property="profit" column="profit" />
+        <result property="status" column="status" />
+        <result property="record" column="record" />
+        <result property="comment" column="comment" />
+        <result property="createdAt" column="created_at" />
+        <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <insert id = "insert" parameterType="realTimeMarket">
+        insert into invest_hold(invest_id, direction, current_price, current_num, profit, status, record,
+         comment, created_at, updated_at)
+          values(#{investId}, #{direction}, #{currentPrice}, #{currentNum}, #{profit}, #{status}, #{record},
+          #{comment}, now(), now())
+	</insert>
+
+    <update id="update" parameterType="hold">
+        update invest_hold set
+            <if test="currentPrice != null">
+                current_price = #{currentPrice},
+            </if>
+            <if test="currentNum != null">
+                current_num = #{currentNum},
+            </if>
+            <if test="profit != null">
+                profit = #{profit},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+            <if test="record != null">
+                record = #{record},
+            </if>
+            <if test="comment != null">
+                comment = #{comment},
+            </if>
+                updated_at = now()
+         where id = #{id}
+	</update>
+
+    <select id="getById" resultMap="holdMap">
+        select * from invest_hold where id = #{id}
+	</select>
+
+    <select id="getAll" resultMap="holdMap">
+		select * from invest_hold
+	</select>
+
+    <select id="getCarringOnHold" resultMap="holdMap">
+		select * from invest_hold
+		where invest_id = #{investId} and direction = #{direction} and status = 0
+		limit 1
+	</select>
+</mapper>

@@ -1,0 +1,57 @@
+投资实时跟踪系统（invest-watcher）
+操作记录表：
+invest_operation_records
+	id,  				
+	invest_id,     		//投资品种
+	oper_direction,  	//操作方向: 0做多/1做空
+	oper_type,			//操作类型: 0开仓/1平仓
+	oper_num,			//操作大小
+	oper_price,			//操作价格
+	oper_date,			//操作时间
+	hold_id,			//对应持仓记录的编号
+
+持仓表：
+invest_hold
+	id,
+	invest_id,			//品种
+	direction,			//开仓方向：0做多/1做空
+	current_price,		//剩余持仓的均价
+	current_num,		//剩余持仓的数量
+	profit,				//已平仓数量获得的盈利
+	status,				//状态：0持仓中，1已结束
+	records,			//交易记录，json格式。
+						// 每条记录格式为：current_num,current_price,profit => oper_date,opera_type,oper_num,oper_price,current_profile，即当持仓价格为x，持仓数量为x，已获利x时，进行xxx操作，获利x。
+	comment,			//交易备注
+	created_at,
+	updated_at,
+
+
+实时行情表
+invest_real_time_market
+	id,	
+	invest_id,			//产品编号
+	name,				//名称			
+	buy,				//买入价
+	sell,				//卖出价
+	created_at,			//时间
+	updated_at,			//更新时间
+
+
+业务逻辑分析：
+1.实时行情表
+	记录不同品种的基本信息及实时行情（秒级更新）。采用定时任务从web端抓取实时信息，然后更新实时行情表。
+
+2.操作记录表 && 持仓表
+	1.操作记录表和持仓表不允许删除操作，只允许添加和更新操作。
+	2.分开仓和平仓对应以下步骤：
+		开仓：
+			a.用户选择投资品种、开仓方向（开仓）、开仓数量、开仓价格，然后添加到操作记录表中。
+			b.在持仓表中，根据用户的品种、开仓方向找出是否存在持仓中的记录，然后计算更新剩余持仓数量和剩余持仓均价，最后添加交易记录信息。
+		平仓：
+			a.用户选择投资品种、开仓方向（平仓）、平仓数量、平仓价格。判断是否存在足够数量的持仓：若不存在则报错，若存在则继续下一步骤。
+			b.在持仓表中，计算更新剩余均价、剩余数量、已平仓盈利。如果更新后的剩余数量为零，则更新状态为已结束。最后添加交易记录信息。
+
+
+
+
+

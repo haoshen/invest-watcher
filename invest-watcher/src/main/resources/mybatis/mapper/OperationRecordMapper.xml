@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.haoshen.money.mapper.OperationRecordMapper">
+
+    <resultMap id="operationRecordMap" type="com.haoshen.money.entity.OperationRecord">
+        <id property="id" column="id" />
+        <result property="investId" column="invest_id" />
+        <result property="operDirection" column="oper_direction" />
+        <result property="operType" column="oper_type" />
+        <result property="operNum" column="oper_num" />
+        <result property="operPrice" column="oper_price" />
+        <result property="operDate" column="oper_date" />
+        <result property="holdId" column="hold_id" />
+    </resultMap>
+
+    <insert id = "insert" parameterType="operationRecord">
+        insert into invest_operation_records(invest_id, oper_direction, oper_type, oper_num, oper_price, oper_date, hold_id)
+          values(#{investId}, #{operDirection}, #{operType}, #{operNum}, #{operPrice}, now(), #{holdId})
+	</insert>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="operationRecordMap">
+        select * from invest_operation_records where id = #{id}
+	</select>
+
+    <select id="getAll" resultMap="operationRecordMap">
+		select * from invest_operation_records
+	</select>
+</mapper>
