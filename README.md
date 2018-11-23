@@ -1,4 +1,6 @@
 # invest-watcher
  贵金属、大宗商品、股票等投资活动实时行情监控、持仓管理、利润记账等
-### 本项目目前处于功能开发中，欢迎加入
-### Contact：717632581@qq.com（Email），woshiwanghao_hi（weChat）
+ 增加个人账户，请参考下方联系方式
+ 增加投资品种，请参考下方联系方式
+### 本项目处于不断更新迭代中，欢迎加入
+### 联系方式：717632581@qq.com（Email），woshiwanghao_hi（weChat）
