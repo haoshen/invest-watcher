@@ -10,13 +10,14 @@ public class Hold implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
-    private int vestId;
-    private int direction;
-    private double currentNum;
-    private double currentPrice;
-    private double profit;
-    private int status;
+    private Integer id;
+    private Integer userId;
+    private Integer investId;
+    private Integer direction;
+    private Double currentNum;
+    private Double currentPrice;
+    private Double profit;
+    private Integer status;
     private String records;
     private String comment;
     private Date createdAt;

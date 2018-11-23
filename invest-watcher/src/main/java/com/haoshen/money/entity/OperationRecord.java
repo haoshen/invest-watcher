@@ -10,13 +10,14 @@ public class OperationRecord implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
-    private int investId;
-    private int operDirection;
-    private int operType;
-    private double operNum;
-    private double operPrice;
+    private Integer id;
+    private Integer userId;
+    private Integer investId;
+    private Integer operDirection;
+    private Integer operType;
+    private Double operNum;
+    private Double operPrice;
     private Date operDate;
-    private int holdId;
+    private Integer holdId;
 
 }

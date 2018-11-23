@@ -1,7 +1,8 @@
 投资实时跟踪系统（invest-watcher）
 操作记录表：
 invest_operation_records
-	id,  				
+	id, 
+	user_id,			//操作人编号 				
 	invest_id,     		//投资品种
 	oper_direction,  	//操作方向: 0做多/1做空
 	oper_type,			//操作类型: 0开仓/1平仓
@@ -10,9 +11,11 @@ invest_operation_records
 	oper_date,			//操作时间
 	hold_id,			//对应持仓记录的编号
 
+
 持仓表：
 invest_hold
 	id,
+	user_id,			//持仓人编号
 	invest_id,			//品种
 	direction,			//开仓方向：0做多/1做空
 	current_price,		//剩余持仓的均价
@@ -20,7 +23,7 @@ invest_hold
 	profit,				//已平仓数量获得的盈利
 	status,				//状态：0持仓中，1已结束
 	records,			//交易记录，json格式。
-						// 每条记录格式为：current_num,current_price,profit => oper_date,opera_type,oper_num,oper_price,current_profile，即当持仓价格为x，持仓数量为x，已获利x时，进行xxx操作，获利x。
+						// 每条记录格式为：current_num, current_price, profit ==> opera_type（开仓/平仓）, oper_num, oper_price ==> current_profile，oper_date
 	comment,			//交易备注
 	created_at,
 	updated_at,
@@ -35,6 +38,15 @@ invest_real_time_market
 	sell,				//卖出价
 	created_at,			//时间
 	updated_at,			//更新时间
+
+用户表
+invest_user
+	id,					//用户编号
+	name,				//用户名
+	password,			//密码
+	status,				//状态，0存在，1删除
+	created_at			//创建时间
+	updated_at			//更新时间
 
 
 业务逻辑分析：
@@ -51,6 +63,19 @@ invest_real_time_market
 			a.用户选择投资品种、开仓方向（平仓）、平仓数量、平仓价格。判断是否存在足够数量的持仓：若不存在则报错，若存在则继续下一步骤。
 			b.在持仓表中，计算更新剩余均价、剩余数量、已平仓盈利。如果更新后的剩余数量为零，则更新状态为已结束。最后添加交易记录信息。
 
+
+前端页面分析：
+1.用户登录框（顶部）
+	用户输入用户名密码，如果后台验证成功，则前端设置cookie(user_id, user_name)，然后页面上显示当前登录用户user_name，之后每次请求都要带上user_id
+
+2.实时行情（菜单栏）
+	显示当前所有品种的实时行情（周期性更新）。如果某一品种有相应持仓则显示其具体持仓情况。
+
+3.仓位操作
+	操作仓位：开仓或平仓
+
+4.历史持仓（菜单栏）
+	展示所有的持仓记录。
 
 
 

@@ -17,15 +17,15 @@ public class OperationRecordService {
     @Resource
     private OperationRecordMapper operationRecordMapper;
 
-    public void insert(OperationRecord operationRecord) {
-        operationRecordMapper.insert(operationRecord);
+    public Boolean insert(OperationRecord operationRecord) {
+        return operationRecordMapper.insert(operationRecord) == 1;
     }
 
     public OperationRecord getById(Integer id) {
         return operationRecordMapper.getById(id);
     }
 
-    public List<OperationRecord> getAll() {
-        return operationRecordMapper.getAll();
+    public List<OperationRecord> getByUserId(Integer userId) {
+        return operationRecordMapper.getByUserId(userId);
     }
 }

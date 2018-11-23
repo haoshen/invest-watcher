@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.haoshen.money.mapper.UserMapper">
+
+    <resultMap id="userMap" type="com.haoshen.money.entity.User">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="password" column="password" />
+        <result property="status" column="status" />
+        <result property="createdAt" column="created_at" />
+        <result property="updatedAt" column="updated_at" />
+    </resultMap>
+
+    <insert id="insert" parameterType="user">
+        insert into invest_user(name, password, status, created_at, updated_at)
+          values(#{name}, #{password}, 0, now(), now())
+	</insert>
+
+    <update id="update" parameterType="user">
+        update invest_user set
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="status != null">
+                status = #{status},
+            </if>
+                updated_at = now()
+         where name = #{name}
+	</update>
+
+    <select id="getByNameAndPassword" resultMap="userMap">
+        select * from invest_user where name = #{name} and password = #{password} and status = 0
+	</select>
+
+    <select id="getAll" resultMap="userMap">
+        select * from invest_user
+	</select>
+
+</mapper>

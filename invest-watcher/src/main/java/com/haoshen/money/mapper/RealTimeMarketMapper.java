@@ -3,17 +3,18 @@ package com.haoshen.money.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.haoshen.money.entity.RealTimeMarket;
 
 @Mapper
 public interface RealTimeMarketMapper {
 
-    public void insert(RealTimeMarket realTimeMarket);
+    public Integer insert(RealTimeMarket realTimeMarket);
 
-    public void update(RealTimeMarket realTimeMarket);
+    public Integer update(RealTimeMarket realTimeMarket);
 
-    public RealTimeMarket getById(Integer id);
+    public RealTimeMarket getById(@Param(value = "id") Integer id);
 
     public List<RealTimeMarket> getAll();
 }

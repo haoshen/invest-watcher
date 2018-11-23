@@ -17,24 +17,19 @@ public class HoldService {
     @Resource
     private HoldMapper holdMapper;
 
-    public void insert(Hold hold) {
-        holdMapper.insert(hold);
+    public Boolean insert(Hold hold) {
+        return holdMapper.insert(hold) == 1;
     }
 
-    public void update(Hold hold) {
-        holdMapper.update(hold);
+    public Boolean update(Hold hold) {
+        return holdMapper.update(hold) == 1;
     }
 
     public Hold getById(Integer id) {
         return holdMapper.getById(id);
     }
 
-    public List<Hold> getAll() {
-        return holdMapper.getAll();
-    }
-
-    // 获取尚未结束的持仓
-    public Hold getCarringOnHold(Integer investId, Integer direction) {
-        return holdMapper.getCarringOnHold(investId, direction);
+    public List<Hold> getHoldByCondition(Integer userId, Integer investId, Integer direction, Integer status) {
+        return holdMapper.getHoldByCondition(userId, investId, direction, status);
     }
 }

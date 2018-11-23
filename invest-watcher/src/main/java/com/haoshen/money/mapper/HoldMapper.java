@@ -10,15 +10,12 @@ import com.haoshen.money.entity.Hold;
 @Mapper
 public interface HoldMapper {
 
-    public void insert(Hold hold);
+    public Integer insert(Hold hold);
 
-    public void update(Hold hold);
+    public Integer update(Hold hold);
 
-    public Hold getById(Integer id);
+    public Hold getById(@Param(value = "id") Integer id);
 
-    public List<Hold> getAll();
-
-    // 获取进行中的持仓
-    public Hold getCarringOnHold(@Param("investId") Integer investId,
-                                       @Param("direction") Integer direction);
+    public List<Hold> getHoldByCondition(@Param(value = "userId") Integer userId, @Param(value = "investId") Integer
+            investId, @Param(value = "direction") Integer direction, @Param(value = "status") Integer status);
 }

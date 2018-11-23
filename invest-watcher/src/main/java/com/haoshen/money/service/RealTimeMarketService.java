@@ -17,12 +17,12 @@ public class RealTimeMarketService {
     @Resource
     private RealTimeMarketMapper realTimeMarketMapper;
 
-    public void insert(RealTimeMarket realTimeMarket) {
-        realTimeMarketMapper.insert(realTimeMarket);
+    public Boolean insert(RealTimeMarket realTimeMarket) {
+        return realTimeMarketMapper.insert(realTimeMarket) == 1;
     }
 
-    public void update(RealTimeMarket realTimeMarket) {
-        realTimeMarketMapper.update(realTimeMarket);
+    public Boolean update(RealTimeMarket realTimeMarket) {
+        return realTimeMarketMapper.update(realTimeMarket) == 1;
     }
 
     public RealTimeMarket getById(Integer id) {
