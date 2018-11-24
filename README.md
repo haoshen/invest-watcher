@@ -13,7 +13,9 @@
 >   + 黄金
 >   + 白银
 >   + 原油
->   + 天然气
+>   + 天然气   
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;更多投资品种持续开发中
 ## More
->&nbsp;&nbsp;&nbsp;&nbsp;项目后台功能基本开仓完成，目前处于持续迭代过程中，欢迎您的加入。   
+>&nbsp;&nbsp;&nbsp;&nbsp;项目目前处于迭代过程中，欢迎您的加入。   
 >&nbsp;&nbsp;&nbsp;&nbsp;联系方式：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
