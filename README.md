@@ -16,4 +16,4 @@
 >   + 天然气
 ## More
 >&nbsp;&nbsp;&nbsp;&nbsp;项目后台功能基本开仓完成，目前处于持续迭代过程中，欢迎您的加入。   
->&nbsp;&nbsp;&nbsp;&nbsp;联系方式：717632581@qq.com（Email），woshiwanghao_hi（weChat）
+>&nbsp;&nbsp;&nbsp;&nbsp;联系方式：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
