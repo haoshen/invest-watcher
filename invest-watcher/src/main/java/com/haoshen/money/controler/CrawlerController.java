@@ -3,7 +3,6 @@ package com.haoshen.money.controler;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ public class CrawlerController {
     @Resource
     private CrawlerManager crawlerManager;
 
-    @RequestMapping(value="/pause", method = RequestMethod.GET)
+    @RequestMapping(value="/pause")
     public ResultMessageDto<Boolean> pauseCrawler(@RequestParam String root,
                                                   @RequestParam String name) {
         ResultMessageDto<Boolean> result = new ResultMessageDto();
@@ -25,7 +24,7 @@ public class CrawlerController {
         return result;
     }
 
-    @RequestMapping(value="/resume", method = RequestMethod.GET)
+    @RequestMapping(value="/resume")
     public ResultMessageDto<Boolean> resumeCrawler(@RequestParam String root,
                                                    @RequestParam String name) {
         ResultMessageDto<Boolean> result = new ResultMessageDto();
@@ -33,7 +32,7 @@ public class CrawlerController {
         return result;
     }
 
-    @RequestMapping(value="/trigger", method = RequestMethod.GET)
+    @RequestMapping(value="/trigger")
     public ResultMessageDto<Boolean> triggerCrawler(@RequestParam String root,
                                                     @RequestParam String name) {
         ResultMessageDto<Boolean> result = new ResultMessageDto();
@@ -41,7 +40,7 @@ public class CrawlerController {
         return result;
     }
 
-    @RequestMapping(value="/reschedule", method = RequestMethod.GET)
+    @RequestMapping(value="/reschedule")
     public ResultMessageDto<Boolean> rescheduleCrawler(@RequestParam String root,
                                                        @RequestParam String name,
                                                        @RequestParam String newName,

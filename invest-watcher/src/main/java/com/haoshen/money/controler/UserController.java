@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,21 +19,21 @@ public class UserController {
     @Resource
     private UserManager userManager;
 
-    @RequestMapping(value="/verify", method = RequestMethod.GET)
+    @RequestMapping(value="/verify")
     public ResultMessageDto<User> userVerify(@RequestParam String name, @RequestParam String password) {
         ResultMessageDto<User> result = new ResultMessageDto();
         result.setResult(userManager.verifyUser(name, password));
         return result;
     }
 
-    @RequestMapping(value="/get", method = RequestMethod.GET)
+    @RequestMapping(value="/get")
     public ResultMessageDto<List<User>> getAll(@RequestParam String root) {
         ResultMessageDto<List<User>> result = new ResultMessageDto();
         result.setResult(userManager.getAllUsers(root));
         return result;
     }
 
-    @RequestMapping(value="/update", method = RequestMethod.GET)
+    @RequestMapping(value="/update")
     public ResultMessageDto<Boolean> updateUser(@RequestParam String root,
                                                 @RequestParam String name,
                                                 @RequestParam(required = false) String password,
@@ -44,7 +43,7 @@ public class UserController {
         return result;
     }
 
-    @RequestMapping(value="/add", method = RequestMethod.GET)
+    @RequestMapping(value="/add")
     public ResultMessageDto<Boolean> addUser(@RequestParam String root,
                                                 @RequestParam String name,
                                                 @RequestParam String password) {

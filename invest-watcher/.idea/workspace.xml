@@ -16,38 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GlobalMarket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/GlobalMarket.java">
+      <file leaf-file-name="CrawlerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/CrawlerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-751">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1320#1321#0" expanded="true" />
-                <element signature="e#1342#1343#0" expanded="true" />
-                <element signature="e#2216#2217#0" expanded="true" />
-                <element signature="e#2274#2275#0" expanded="true" />
-                <element signature="e#2343#2344#0" expanded="true" />
-                <element signature="e#2391#2392#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
-                <element signature="e#2502#2503#0" expanded="true" />
-                <element signature="e#4476#4477#0" expanded="true" />
-                <element signature="e#4522#4523#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="152">
+              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KouDaiMetalCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiMetalCrawler.java">
+      <file leaf-file-name="InvestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/InvestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-                <element signature="e#1169#1170#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="19">
+              <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -55,44 +37,17 @@
       <file leaf-file-name="MarketPriceController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/MarketPriceController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="133">
+              <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KouDaiEnergyCrawler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiEnergyCrawler.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="101" column="43" lean-forward="true" selection-start-line="101" selection-start-column="43" selection-end-line="101" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringContextUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/utils/SpringContextUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#418#419#0" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#691#692#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CrawlerScheduler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/CrawlerScheduler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="181">
+              <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -122,9 +77,9 @@
       <find>investId</find>
       <find>record</find>
       <find>JSON</find>
-      <find>KOUDAI_API</find>
       <find>Dep</find>
       <find>Depend</find>
+      <find>KOUDAI_API</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -154,33 +109,33 @@
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/service/HoldService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/dto/AccountDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/entity/Hold.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/InvestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/KouDaiCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/quartz.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/entity/MarketPrice.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/manager/MarketPriceManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/project.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/CrawlerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/manager/CrawlerManager.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/Application.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/dto/RealTimeMarketDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/MarketPriceController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/HoldMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/manager/InvestManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/mapper/MartekPriceMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/service/MartekPriceService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/mapper/MarketPrice.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/manager/UserManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiEnergyCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiMetalCrawler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/utils/SpringContextUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/GlobalMarket.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/CrawlerScheduler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/CrawlerController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/InvestController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/MarketPriceController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/UserController.java" />
       </list>
     </option>
   </component>
@@ -526,7 +481,7 @@
       <workItem from="1543106046364" duration="1325000" />
       <workItem from="1543197730265" duration="8728000" />
       <workItem from="1543213487606" duration="7962000" />
-      <workItem from="1543234830048" duration="6926000" />
+      <workItem from="1543234830048" duration="7343000" />
     </task>
     <servers />
   </component>
@@ -563,7 +518,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87534000" />
+    <option name="totallyTimeSpent" value="87951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -577,12 +532,12 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.48606062" />
+      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.39030302" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="2" weight="0.34666666" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.24105866" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.24105866" />
       <window_info anchor="right" id="Bean Validation" order="2" />
       <window_info id="Web" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Tail" order="0" />
@@ -732,13 +687,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/quartz.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/CrawlerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="49" column="64" selection-start-line="49" selection-start-column="64" selection-end-line="49" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/Application.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -813,13 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/InvestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="47" column="83" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -883,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/manager/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -915,29 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/utils/SpringContextUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#462#463#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/MarketPriceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/koudai/KouDaiMetalCrawler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -954,6 +865,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="101" column="43" lean-forward="true" selection-start-line="101" selection-start-column="43" selection-end-line="101" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/CrawlerScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/utils/SpringContextUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -977,10 +911,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/crawler/CrawlerScheduler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/CrawlerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+        <state relative-caret-position="152">
+          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/InvestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/MarketPriceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="49" column="53" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/haoshen/money/controler/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
         </state>
       </provider>
     </entry>

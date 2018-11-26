@@ -7,7 +7,6 @@ import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,28 +26,28 @@ public class MarketPriceController {
     @Resource
     private GlobalMarket globalMarket;
 
-    @RequestMapping(value="/current", method = RequestMethod.GET)
+    @RequestMapping(value="/current")
     public ResultMessageDto<Map<String, RealTimeMarketDto>> getAllRealTimeMarkets() {
         ResultMessageDto<Map<String, RealTimeMarketDto>> result = new ResultMessageDto();
         result.setResult(globalMarket.getAllRealTimeMarkets());
         return result;
     }
 
-    @RequestMapping(value="/current/{code}", method = RequestMethod.GET)
+    @RequestMapping(value="/current/{code}")
     public ResultMessageDto<RealTimeMarketDto> getRealTimeMarketByCode(@PathVariable("id") String code) {
         ResultMessageDto<RealTimeMarketDto> result = new ResultMessageDto();
         result.setResult(globalMarket.getRealTimeMarketByCode(code));
         return result;
     }
 
-    @RequestMapping(value="/current/history", method = RequestMethod.GET)
+    @RequestMapping(value="/current/history")
     public ResultMessageDto<Map<String, MarketPrice>> getAllHistoryMarkets() {
         ResultMessageDto<Map<String, MarketPrice>> result = new ResultMessageDto();
         result.setResult(globalMarket.getAllHistoryMarkets());
         return result;
     }
 
-    @RequestMapping(value="/getDatabaseLatestRecords", method = RequestMethod.GET)
+    @RequestMapping(value="/getDatabaseLatestRecords")
     public ResultMessageDto<List<MarketPrice>> getDatabaseLatestRecords(@RequestParam String name, @RequestParam Integer num) {
         ResultMessageDto<List<MarketPrice>> result = new ResultMessageDto();
         if(num > 0 && num <= 200) {

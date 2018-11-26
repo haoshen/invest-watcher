@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,28 +21,28 @@ public class InvestController {
     @Resource
     private InvestManager investManager;
 
-    @RequestMapping(value = "/realTimeMarket", method = RequestMethod.POST)
+    @RequestMapping(value = "/realTimeMarket")
     public ResultMessageDto<Boolean> getRealTimeMarket() {
         ResultMessageDto<Boolean> result = new ResultMessageDto();
         result.setResult(true);
         return result;
     }
 
-    @RequestMapping(value = "/currentHolds", method = RequestMethod.POST)
+    @RequestMapping(value = "/currentHolds")
     public ResultMessageDto<List<Hold>> getRealTimeHolds(@RequestParam Integer userId) {
         ResultMessageDto<List<Hold>> result = new ResultMessageDto();
         result.setResult(investManager.getCurrentHolds(userId));
         return result;
     }
 
-    @RequestMapping(value = "/allHolds", method = RequestMethod.POST)
+    @RequestMapping(value = "/allHolds")
     public ResultMessageDto<List<HoldDto>> getAllHolds(@RequestParam Integer userId) {
         ResultMessageDto<List<HoldDto>> result = new ResultMessageDto();
         result.setResult(investManager.getAllHolds(userId));
         return result;
     }
 
-    @RequestMapping(value = "/updateHoldComment", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateHoldComment")
     public ResultMessageDto<Boolean> updateHoldComment(@RequestParam Integer userId,
                                                        @RequestParam Integer holdId,
                                                        @RequestParam String comment) {
@@ -52,7 +51,7 @@ public class InvestController {
         return result;
     }
 
-    @RequestMapping(value = "/processAccount", method = RequestMethod.POST)
+    @RequestMapping(value = "/processAccount")
     public ResultMessageDto<Boolean> updateHoldComment(@RequestParam Integer userId,
                                                        @RequestParam Integer direction,
                                                        @RequestParam String investId,
