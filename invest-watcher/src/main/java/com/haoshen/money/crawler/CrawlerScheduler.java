@@ -15,12 +15,14 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 import com.haoshen.money.crawler.koudai.KouDaiEnergyCrawler;
 import com.haoshen.money.crawler.koudai.KouDaiMetalCrawler;
 
 @Service("crawlerScheduler")
+@DependsOn("springContextUtil")
 public class CrawlerScheduler implements InitializingBean {
 
     private static Logger log = LoggerFactory.getLogger(CrawlerScheduler.class);
