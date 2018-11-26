@@ -21,8 +21,8 @@ public class UserController {
     private UserManager userManager;
 
     @RequestMapping(value="/verify", method = RequestMethod.GET)
-    public ResultMessageDto<Boolean> userVerify(@RequestParam String name, @RequestParam String password) {
-        ResultMessageDto<Boolean> result = new ResultMessageDto();
+    public ResultMessageDto<User> userVerify(@RequestParam String name, @RequestParam String password) {
+        ResultMessageDto<User> result = new ResultMessageDto();
         result.setResult(userManager.verifyUser(name, password));
         return result;
     }

@@ -16,15 +16,12 @@ public class UserManager {
     @Resource
     private UserService userService;
 
-    public Boolean verifyUser(String name, String password) {
+    public User verifyUser(String name, String password) {
         if (name == null || password == null) {
-            return false;
+            return null;
         }
         User user = userService.getByNameAndPassword(name, password);
-        if (user == null) {
-            return false;
-        }
-        return true;
+        return user;
     }
 
     public Boolean updateUser(String root, String name, String password, Integer status) {

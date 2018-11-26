@@ -17,14 +17,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
-import com.haoshen.money.crawler.koudai.KouDaiCrawler;
+import com.haoshen.money.crawler.koudai.KouDaiEnergyCrawler;
+import com.haoshen.money.crawler.koudai.KouDaiMetalCrawler;
 
 @Service("crawlerScheduler")
 public class CrawlerScheduler implements InitializingBean {
 
     private static Logger log = LoggerFactory.getLogger(CrawlerScheduler.class);
 
-    private static String cronKoudaiExperssion = "*/10 * * * * ?";
+    private static String cronKoudaiExperssion = "*/5 * * * * ?";
 
     private Scheduler scheduler;
 
@@ -111,18 +112,21 @@ public class CrawlerScheduler implements InitializingBean {
     }
 
 
-
     //初始化爬虫
     private void addCrawlers() throws Exception{
-        //定义口袋爬虫的job和trigger
-        String crawlerName = "koudai";
-        JobDetail koudaiJob = JobBuilder.newJob(KouDaiCrawler.class)
+        addCrawler("kouda_metal", KouDaiMetalCrawler.class, cronKoudaiExperssion);
+        addCrawler("koudai_energy", KouDaiEnergyCrawler.class, cronKoudaiExperssion);
+    }
+
+    private void addCrawler(String crawlerName, Class crawlerClass, String expr) throws Exception{
+        //定义爬虫的job和trigger
+        JobDetail jobDetail = JobBuilder.newJob(crawlerClass)
                 .withIdentity(getJobName(crawlerName), getGroupName(crawlerName)).build();
-        Trigger koudaiTrigger = TriggerBuilder.newTrigger()
+        Trigger trigger = TriggerBuilder.newTrigger()
                 .withIdentity(getTriggerName(crawlerName), getGroupName(crawlerName))
-                .withSchedule(CronScheduleBuilder.cronSchedule(cronKoudaiExperssion)).build();
+                .withSchedule(CronScheduleBuilder.cronSchedule(expr)).build();
         // 添加定时爬取任务
-        scheduler.scheduleJob(koudaiJob, koudaiTrigger);
+        scheduler.scheduleJob(jobDetail, trigger);
         crawlerSet.add(crawlerName);
     }
 

@@ -79,18 +79,19 @@ invest_market_xxx
 
 
 投资品种：
-	id 		code 		name
-	3 		AURMB 		纸黄金
-	4 		AGRMB 		纸白银
-	12 		XAU			现货黄金
-	13 		XAG			现货白银
-	14 		WTICO		国际原油
-	15		NG			NYMEX天然气
-	108		BCO			布伦特原油
-	150		ICBCCO 		人民币北美油
-	152 	ICBCOI 		人民币国际油
-
-
+	id 				code 		name
+	3 				AURMB 		纸黄金
+	4 				AGRMB 		纸白银
+	12 				XAU			现货黄金
+	13 				XAG			现货白银
+	14 				WTICO		北美原油
+	108				BCO			布伦特原油
+	130060153591	WTICN		人民币北美油
+	130060153592	BRENTCN		人民币国际油		
+	130060153593	WTIUS		美元北美油
+	130060153594	BRENTUS		美元国际油
+	130060176591	GASCN		人民币天然气
+	130060176592	GASUS		美元天然气
 
 
 

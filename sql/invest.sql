@@ -11,7 +11,7 @@
  Target Server Version : 80012
  File Encoding         : utf-8
 
- Date: 11/26/2018 16:26:56 PM
+ Date: 11/26/2018 23:03:39 PM
 */
 
 SET NAMES utf8;
@@ -51,7 +51,7 @@ CREATE TABLE `invest_market_AGRMB` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_AURMB`
@@ -67,7 +67,7 @@ CREATE TABLE `invest_market_AURMB` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_BCO`
@@ -83,13 +83,13 @@ CREATE TABLE `invest_market_BCO` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Table structure for `invest_market_ICBCCO`
+--  Table structure for `invest_market_BRENTCN`
 -- ----------------------------
-DROP TABLE IF EXISTS `invest_market_ICBCCO`;
-CREATE TABLE `invest_market_ICBCCO` (
+DROP TABLE IF EXISTS `invest_market_BRENTCN`;
+CREATE TABLE `invest_market_BRENTCN` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `start` float DEFAULT NULL,
   `end` float DEFAULT '0',
@@ -99,13 +99,13 @@ CREATE TABLE `invest_market_ICBCCO` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Table structure for `invest_market_ICBCOI`
+--  Table structure for `invest_market_BRENTUS`
 -- ----------------------------
-DROP TABLE IF EXISTS `invest_market_ICBCOI`;
-CREATE TABLE `invest_market_ICBCOI` (
+DROP TABLE IF EXISTS `invest_market_BRENTUS`;
+CREATE TABLE `invest_market_BRENTUS` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `start` float DEFAULT NULL,
   `end` float DEFAULT '0',
@@ -115,13 +115,13 @@ CREATE TABLE `invest_market_ICBCOI` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
---  Table structure for `invest_market_NG`
+--  Table structure for `invest_market_GASCN`
 -- ----------------------------
-DROP TABLE IF EXISTS `invest_market_NG`;
-CREATE TABLE `invest_market_NG` (
+DROP TABLE IF EXISTS `invest_market_GASCN`;
+CREATE TABLE `invest_market_GASCN` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `start` float DEFAULT NULL,
   `end` float DEFAULT '0',
@@ -131,7 +131,39 @@ CREATE TABLE `invest_market_NG` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `invest_market_GASUS`
+-- ----------------------------
+DROP TABLE IF EXISTS `invest_market_GASUS`;
+CREATE TABLE `invest_market_GASUS` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start` float DEFAULT NULL,
+  `end` float DEFAULT '0',
+  `top` float DEFAULT NULL,
+  `bottom` float DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `invest_market_WTICN`
+-- ----------------------------
+DROP TABLE IF EXISTS `invest_market_WTICN`;
+CREATE TABLE `invest_market_WTICN` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start` float DEFAULT NULL,
+  `end` float DEFAULT '0',
+  `top` float DEFAULT NULL,
+  `bottom` float DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_WTICO`
@@ -147,7 +179,23 @@ CREATE TABLE `invest_market_WTICO` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Table structure for `invest_market_WTIUS`
+-- ----------------------------
+DROP TABLE IF EXISTS `invest_market_WTIUS`;
+CREATE TABLE `invest_market_WTIUS` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start` float DEFAULT NULL,
+  `end` float DEFAULT '0',
+  `top` float DEFAULT NULL,
+  `bottom` float DEFAULT NULL,
+  `start_time` datetime DEFAULT NULL,
+  `end_time` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_XAG`
@@ -163,7 +211,7 @@ CREATE TABLE `invest_market_XAG` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_XAU`
@@ -179,7 +227,7 @@ CREATE TABLE `invest_market_XAU` (
   `end_time` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_operation_records`
@@ -217,7 +265,12 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-# insert test user
+
+
+
+
+
+
 
 insert into `invest`.`invest_user` ( `password`, `status`, `updated_at`, `name`, `created_at`) 
   values ( 'test', '0', '2018-11-23', 'test', '2018-11-23');

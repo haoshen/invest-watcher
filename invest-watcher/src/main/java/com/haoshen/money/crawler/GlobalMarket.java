@@ -20,15 +20,15 @@ public class GlobalMarket implements InitializingBean {
     private MarketPriceManager marketPriceManager;
 
     // 投资品种总数
-    private static int allInvestSize = 9;
+    private static int allInvestSize = 12;
 
     // 所有投资品种代码
-    private static String[] allInvestCodes = {"AURMB", "AGRMB", "XAU", "XAG",
-            "WTICO", "NG", "BCO", "ICBCCO", "ICBCOI"};
+    private static String[] allInvestCodes = {"AURMB", "AGRMB", "XAU", "XAG", "WTICO", "BCO",
+            "WTIUS", "WTICN", "BRENTUS", "BRENTCN", "GASUS", "GASCN"};
 
     // 所有投资品种名称
     private static  String[] allInvestNames = {"纸黄金", "纸白银", "现货黄金", "现货白银",
-            "国际原油", "NYMEX天然气", "布伦特原油", "人民币北美油", "人民币国际油"};
+            "现货北美油", "现货国际油", "美元北美油",  "人民币北美油", "美元国际油", "人民币国际油", "美元天然气", "人民币天然气"};
 
     // 实时行情，供前端调用
     private Map<String, RealTimeMarketDto> realTimeMarketDtoMap = new HashMap<>();

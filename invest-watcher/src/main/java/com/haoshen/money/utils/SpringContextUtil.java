@@ -26,6 +26,7 @@ public class SpringContextUtil implements ApplicationContextAware {
     //通过class获取Bean.
     public static<T> T getBean(Class<T> clazz){
         return applicationContext.getBean(clazz);
+//        return null;
     }
 
     //通过name,以及Clazz返回指定的Bean
