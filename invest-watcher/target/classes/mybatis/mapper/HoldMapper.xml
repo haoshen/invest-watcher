@@ -12,16 +12,16 @@
         <result property="currentNum" column="current_num" />
         <result property="profit" column="profit" />
         <result property="status" column="status" />
-        <result property="record" column="record" />
+        <result property="records" column="records" />
         <result property="comment" column="comment" />
         <result property="createdAt" column="created_at" />
         <result property="updatedAt" column="updated_at" />
     </resultMap>
 
     <insert id = "insert" parameterType="hold" useGeneratedKeys="true" keyProperty="id">
-        insert into invest_hold(user_id, invest_id, direction, current_price, current_num, profit, status, record,
+        insert into invest_hold(user_id, invest_id, direction, current_price, current_num, profit, status, records,
          comment, created_at, updated_at)
-          values(#{userId}, #{investId}, #{direction}, #{currentPrice}, #{currentNum}, #{profit}, #{status}, #{record},
+          values(#{userId}, #{investId}, #{direction}, #{currentPrice}, #{currentNum}, #{profit}, #{status}, #{records},
           #{comment}, now(), now())
 	</insert>
 
@@ -39,8 +39,8 @@
             <if test="status != null">
                 status = #{status},
             </if>
-            <if test="record != null">
-                record = #{record},
+            <if test="records != null">
+                records = #{records},
             </if>
             <if test="comment != null">
                 comment = #{comment},

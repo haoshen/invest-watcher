@@ -12,11 +12,10 @@ import com.haoshen.money.dto.AccountDto;
 import com.haoshen.money.dto.HoldDto;
 import com.haoshen.money.dto.HoldOperRecordDto;
 import com.haoshen.money.entity.Hold;
+import com.haoshen.money.entity.MarketPrice;
 import com.haoshen.money.entity.OperationRecord;
-import com.haoshen.money.entity.RealTimeMarket;
 import com.haoshen.money.service.HoldService;
 import com.haoshen.money.service.OperationRecordService;
-import com.haoshen.money.service.RealTimeMarketService;
 import com.haoshen.money.utils.TimeUtil;
 
 @Service("investManager")
@@ -26,14 +25,11 @@ public class InvestManager {
     private HoldService holdService;
 
     @Resource
-    private RealTimeMarketService realTimeMarketService;
-
-    @Resource
     private OperationRecordService operationRecordService;
 
-    // 展示实时行情
-    public List<RealTimeMarket> getRealTimeMarket() {
-        return realTimeMarketService.getAll();
+    // 展示实时行情 TODO
+    public List<MarketPrice> getRealTimeMarket() {
+        return null;
     }
 
     // 展示实时仓位
@@ -75,16 +71,16 @@ public class InvestManager {
     // 处理仓位操作，包括：做多开仓、做多平仓、做空开仓、做空平仓
     public Boolean processAccount(AccountDto accountDto) {
         if (accountDto == null || accountDto.getUserId() == null || accountDto.getDirection() == null ||
-                accountDto.getInvestId() == null || accountDto.getNum() == null ||
-                accountDto.getPrice() == null || accountDto.getType() == null) {
+                accountDto.getInvestId() == null || accountDto.getNum() == null || accountDto.getNum() <=0 ||
+                accountDto.getPrice() == null || accountDto.getPrice() <= 0 || accountDto.getType() == null) {
             return false;
         }
         Integer userId = accountDto.getUserId();
         Integer direction = accountDto.getDirection();
-        Integer inverstId = accountDto.getInvestId();
+        String inverstId = accountDto.getInvestId();
         Integer type = accountDto.getType();
-        double num = accountDto.getNum();
-        double price = accountDto.getPrice();
+        float num = accountDto.getNum();
+        float price = accountDto.getPrice();
 
         // 根据操作品种和开仓方向获取尚未结束的持仓
         List<Hold> holds = holdService.getHoldByCondition(userId, inverstId, direction, 0);
@@ -123,13 +119,13 @@ public class InvestManager {
     // 计算持仓详情
     private Boolean processHold(Hold hold, AccountDto accountDto) {
         // 计算均价、数量、利润等
-        double currentNum = hold.getCurrentNum() != null ? hold.getCurrentNum() : 0;
-        double currentPrice = hold.getCurrentPrice() != null ? hold.getCurrentPrice() : 0;
-        double operNum = accountDto.getNum();
-        double operPrice = accountDto.getPrice();
-        double operProfit = 0;
-        double newNum = 0;
-        double newPrice = 0;
+        float currentNum = hold.getCurrentNum() != null ? hold.getCurrentNum() : 0;
+        float currentPrice = hold.getCurrentPrice() != null ? hold.getCurrentPrice() : 0;
+        float operNum = accountDto.getNum();
+        float operPrice = accountDto.getPrice();
+        float operProfit = 0;
+        float newNum = 0;
+        float newPrice = 0;
         int type = accountDto.getType();
         int direction = accountDto.getDirection();
         if (type == 0) {                        //开仓操作（包括做空开仓或做多开仓），开仓操作没有利润，仓位会增加，价格为平均价格
@@ -154,17 +150,17 @@ public class InvestManager {
                 }
             } else {                            //操作之后，还有剩余仓位
                 if (direction == 0) {           // 做多平仓
-                    newPrice = (operNum * operPrice - currentNum * currentPrice) / newNum;
+                    newPrice = currentPrice;    // 平仓不会影响价格
                     operProfit = operNum * (operPrice - currentPrice);
                 } else {                        // 做空平仓
-                    newPrice = (operNum * operPrice - currentNum * currentPrice) / newNum;
+                    newPrice = currentPrice;
                     operProfit = operNum * (currentPrice - operPrice);
                 }
             }
 
         }
-        double currentProfit = hold.getProfit() != null ? hold.getProfit() : 0;
-        double newProfit = currentProfit + operProfit;
+        float currentProfit = hold.getProfit() != null ? hold.getProfit() : 0;
+        float newProfit = currentProfit + operProfit;
 
         // 设置持仓中的操作记录
         List<HoldOperRecordDto> recordsDto = string2HoldOperRecordDto(hold.getRecords());

@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 public class AccountDto {
     private Integer userId;
-    private Integer investId;
+    private String investId;
     private Integer direction;
     private Integer type;
-    private Double num;
-    private Double price;
+    private Float num;
+    private Float price;
 }

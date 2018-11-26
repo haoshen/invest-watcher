@@ -6,12 +6,12 @@ import lombok.Data;
 @Data
 public class HoldOperRecordDto {
 
-    private Double currentNum;
-    private Double currentPrice;
-    private Double currentProfit;
+    private Float currentNum;
+    private Float currentPrice;
+    private Float currentProfit;
     private String operTime;
     private Integer operType;
-    private Double operNum;
-    private Double operPrice;
-    private Double operProfit;
+    private Float operNum;
+    private Float operPrice;
+    private Float operProfit;
 }

@@ -29,7 +29,7 @@ public class HoldService {
         return holdMapper.getById(id);
     }
 
-    public List<Hold> getHoldByCondition(Integer userId, Integer investId, Integer direction, Integer status) {
+    public List<Hold> getHoldByCondition(Integer userId, String investId, Integer direction, Integer status) {
         return holdMapper.getHoldByCondition(userId, investId, direction, status);
     }
 }

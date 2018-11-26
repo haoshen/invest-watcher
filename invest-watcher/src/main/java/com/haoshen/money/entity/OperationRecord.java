@@ -12,11 +12,11 @@ public class OperationRecord implements Serializable {
 
     private Integer id;
     private Integer userId;
-    private Integer investId;
+    private String investId;
     private Integer operDirection;
     private Integer operType;
-    private Double operNum;
-    private Double operPrice;
+    private Float operNum;
+    private Float operPrice;
     private Date operDate;
     private Integer holdId;
 

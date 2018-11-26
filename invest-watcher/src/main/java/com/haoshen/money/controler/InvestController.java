@@ -13,7 +13,6 @@ import com.haoshen.money.dto.AccountDto;
 import com.haoshen.money.dto.HoldDto;
 import com.haoshen.money.dto.ResultMessageDto;
 import com.haoshen.money.entity.Hold;
-import com.haoshen.money.entity.RealTimeMarket;
 import com.haoshen.money.manager.InvestManager;
 
 @RestController
@@ -24,9 +23,9 @@ public class InvestController {
     private InvestManager investManager;
 
     @RequestMapping(value = "/realTimeMarket", method = RequestMethod.POST)
-    public ResultMessageDto<List<RealTimeMarket>> getRealTimeMarket() {
-        ResultMessageDto<List<RealTimeMarket>> result = new ResultMessageDto();
-        result.setResult(investManager.getRealTimeMarket());
+    public ResultMessageDto<Boolean> getRealTimeMarket() {
+        ResultMessageDto<Boolean> result = new ResultMessageDto();
+        result.setResult(true);
         return result;
     }
 
@@ -56,10 +55,10 @@ public class InvestController {
     @RequestMapping(value = "/processAccount", method = RequestMethod.POST)
     public ResultMessageDto<Boolean> updateHoldComment(@RequestParam Integer userId,
                                                        @RequestParam Integer direction,
-                                                       @RequestParam Integer investId,
+                                                       @RequestParam String investId,
                                                        @RequestParam Integer type,
-                                                       @RequestParam Double num,
-                                                       @RequestParam Double price) {
+                                                       @RequestParam Float num,
+                                                       @RequestParam Float price) {
         ResultMessageDto<Boolean> result = new ResultMessageDto();
         AccountDto accountDto = new AccountDto();
         accountDto.setUserId(userId);

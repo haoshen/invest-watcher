@@ -12,11 +12,11 @@ public class Hold implements Serializable {
 
     private Integer id;
     private Integer userId;
-    private Integer investId;
+    private String investId;
     private Integer direction;
-    private Double currentNum;
-    private Double currentPrice;
-    private Double profit;
+    private Float currentNum;
+    private Float currentPrice;
+    private Float profit;
     private Integer status;
     private String records;
     private String comment;

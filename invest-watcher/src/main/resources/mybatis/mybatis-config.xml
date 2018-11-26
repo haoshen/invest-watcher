@@ -3,7 +3,7 @@
 
 <configuration>
     <typeAliases>
-        <typeAlias alias="realTimeMarket" type="com.haoshen.money.entity.RealTimeMarket" />
+        <typeAlias alias="marketPrice" type="com.haoshen.money.entity.MarketPrice" />
         <typeAlias alias="hold" type="com.haoshen.money.entity.Hold" />
         <typeAlias alias="operationRecord" type="com.haoshen.money.entity.OperationRecord" />
         <typeAlias alias="user" type="com.haoshen.money.entity.User" />
