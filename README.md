@@ -17,5 +17,5 @@
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;更多投资品种持续开发中
 ## More
->&nbsp;&nbsp;&nbsp;&nbsp;目前项目基础功能已开发完毕，处于扩展功能开发过程中。如果您感兴趣欢迎联系：   
->&nbsp;&nbsp;&nbsp;&nbsp;717632581@qq.com（Email），woshiwanghao_hi（WeChat）
+>&nbsp;&nbsp;&nbsp;&nbsp;项目基础功能已开发完成，目前处于维护及bug修复过程中。  
+>&nbsp;&nbsp;&nbsp;&nbsp;如果您对本项目感兴趣，欢迎联系：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
