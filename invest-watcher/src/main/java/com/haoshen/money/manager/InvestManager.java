@@ -1,24 +1,30 @@
 package com.haoshen.money.manager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSONObject;
+import com.haoshen.money.crawler.GlobalMarket;
 import com.haoshen.money.dto.AccountDto;
+import com.haoshen.money.dto.HoldAndProfitDto;
 import com.haoshen.money.dto.HoldDto;
 import com.haoshen.money.dto.HoldOperRecordDto;
+import com.haoshen.money.dto.RealTimeMarketDto;
 import com.haoshen.money.entity.Hold;
-import com.haoshen.money.entity.MarketPrice;
 import com.haoshen.money.entity.OperationRecord;
 import com.haoshen.money.service.HoldService;
 import com.haoshen.money.service.OperationRecordService;
 import com.haoshen.money.utils.TimeUtil;
 
 @Service("investManager")
+@DependsOn("globalMarket")
 public class InvestManager {
 
     @Resource
@@ -27,33 +33,103 @@ public class InvestManager {
     @Resource
     private OperationRecordService operationRecordService;
 
-    // 展示实时行情 TODO
-    public List<MarketPrice> getRealTimeMarket() {
-        return null;
-    }
+    @Resource
+    private GlobalMarket globalMarket;
 
-    // 展示实时仓位
-    public List<Hold> getCurrentHolds(Integer userId) {
-        if (userId == null) {
-            return null;
-        }
-        return holdService.getHoldByCondition(userId, null, null, 0);
-    }
+    // 各个用户对应的实时持仓缓存
+    private Map<Integer, List<Hold>> currentHoldsCacheMap = new HashMap<>();
 
-    // 展示所有仓位
-    public List<HoldDto> getAllHolds(Integer userId) {
+    // 各个用户对应的持仓是否需要更新状态
+    private Map<Integer, Boolean> shouldHoldCacheUpdateMap = new HashMap<>();
+
+    // 各个用户对应的total
+    private Map<Integer, Integer> holdCacheTotalMap = new HashMap<>();
+
+    // 展示所有历史仓位
+    public JSONObject getAllHolds(Integer userId, Integer limit, Integer offset) {
+        JSONObject jsonObject = new JSONObject();
         if (userId == null) {
             return null;
         }
         List<HoldDto> holdDtos = new ArrayList<>();
-        List<Hold> holds = holdService.getHoldByCondition(userId, null, null, null);
+        List<Hold> holds = holdService.getHoldByCondition(userId, null, null, null, true, limit, offset);
         for(Hold hold : holds) {
             HoldDto dto = new HoldDto();
-            dto.setHold(hold);
-            dto.setRecords(string2HoldOperRecordDto(hold.getRecords()));
+            dto.setProfit(hold.getProfit());
+            dto.setCurrentPrice(hold.getCurrentPrice());
+            dto.setCurrentNum(hold.getCurrentNum());
+            dto.setId(hold.getId());
+            //将code改为name
+            dto.setInvestId(globalMarket.getNameByCode(hold.getInvestId()));
+            dto.setComment(hold.getComment());
+            dto.setRecords(hold.getRecords());
+            dto.setUserId(hold.getUserId());
+            dto.setDirection(hold.getDirection());
+            dto.setStatus(hold.getStatus());
             holdDtos.add(dto);
         }
-        return holdDtos;
+        jsonObject.put("rows", holdDtos);
+        jsonObject.put("total", holdService.getCountByCondition(userId, null, null, null));
+        return jsonObject;
+    }
+
+    // 展示实时仓位及实时行情利润
+    public JSONObject getHoldOnHolds(Integer userId, Integer limit, Integer offset, Integer status) {
+        if (userId == null) {
+            return null;
+        }
+        JSONObject jsonObject = new JSONObject();
+        List<HoldAndProfitDto> holdAndProfitDtos = new ArrayList<>();
+        Boolean shouldHoldsCacheUpdated = shouldHoldCacheUpdateMap.get(userId);
+        // 判断是否需要更新缓存
+        List<Hold> currentHoldsCache = currentHoldsCacheMap.get(userId);
+        Integer total = holdCacheTotalMap.get(userId);
+        if (shouldHoldsCacheUpdated == null || shouldHoldsCacheUpdated) {
+            currentHoldsCache = holdService.getHoldByCondition(userId, null, null, status, true, limit,
+                    offset);
+            total = holdService.getCountByCondition(userId, null, null, status);
+            currentHoldsCacheMap.put(userId, currentHoldsCache);
+            holdCacheTotalMap.put(userId, total);
+            shouldHoldCacheUpdateMap.put(userId, false);
+        }
+        Map<String, RealTimeMarketDto> realTimeMarkets = globalMarket.getAllRealTimeMarkets();
+        if (currentHoldsCache != null && realTimeMarkets != null) {
+            for(Hold hold : currentHoldsCache) {
+                HoldAndProfitDto dto = new HoldAndProfitDto();
+                dto.setInvestId(hold.getInvestId());
+                dto.setId(hold.getId());
+                dto.setUserId(hold.getUserId());
+                dto.setDirection(hold.getDirection());
+                dto.setCurrentNum(hold.getCurrentNum());
+                dto.setCurrentPrice(hold.getCurrentPrice());
+                dto.setRecords(hold.getRecords());
+                dto.setProfit(hold.getProfit());
+                dto.setComment(hold.getComment());
+                // 计算实时利润
+                RealTimeMarketDto realTimeMarket = realTimeMarkets.get(hold.getInvestId());
+                if (realTimeMarket != null) {
+                    Float buy = realTimeMarket.getBuy();
+                    Float sell = realTimeMarket.getSell();
+                    if (buy != null && sell != null) {
+                        dto.setName(realTimeMarket.getName());
+                        dto.setSell(sell);
+                        dto.setBuy(buy);
+                        Float profit;
+                        if (hold.getDirection() == 0) {     //做多
+                            profit = (buy - hold.getCurrentPrice()) * hold.getCurrentNum();
+                        } else {                            //做空
+                            profit = (hold.getCurrentPrice() - sell) * hold.getCurrentNum();
+                        }
+                        dto.setVirtualProfit(profit);
+                        dto.setUpdatedAt(TimeUtil.getDateTimeStr(realTimeMarket.getUpdatedTime()));
+                    }
+                }
+                holdAndProfitDtos.add(dto);
+            }
+        }
+        jsonObject.put("rows", holdAndProfitDtos);
+        jsonObject.put("total", total);
+        return jsonObject;
     }
 
     // 更新持仓备注
@@ -83,7 +159,7 @@ public class InvestManager {
         float price = accountDto.getPrice();
 
         // 根据操作品种和开仓方向获取尚未结束的持仓
-        List<Hold> holds = holdService.getHoldByCondition(userId, inverstId, direction, 0);
+        List<Hold> holds = holdService.getHoldByCondition(userId, inverstId, direction, 0, false, null, null);
 
         Integer holdId;
         if (holds != null && !holds.isEmpty()) {            // 如有返回，则表示已有记录，之后需要更新该持仓记录
@@ -112,6 +188,10 @@ public class InvestManager {
         operationRecord.setOperPrice(price);
         operationRecord.setHoldId(holdId);
         operationRecordService.insert(operationRecord);
+
+        //通知持仓缓存进行更新
+        shouldHoldCacheUpdateMap.put(userId, true);
+
         return true;
     }
 

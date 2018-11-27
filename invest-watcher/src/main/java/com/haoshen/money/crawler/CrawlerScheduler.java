@@ -27,7 +27,7 @@ public class CrawlerScheduler implements InitializingBean {
 
     private static Logger log = LoggerFactory.getLogger(CrawlerScheduler.class);
 
-    private static String cronKoudaiExperssion = "*/5 * * * * ?";
+    private static String cronKoudaiExperssion = "*/1 * * * * ?";
 
     private Scheduler scheduler;
 

@@ -1,7 +1,9 @@
 package com.haoshen.money.crawler;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -29,6 +31,8 @@ public class GlobalMarket implements InitializingBean {
     // 所有投资品种名称
     private static  String[] allInvestNames = {"纸黄金", "纸白银", "现货黄金", "现货白银",
             "现货北美油", "现货国际油", "美元北美油",  "人民币北美油", "美元国际油", "人民币国际油", "美元天然气", "人民币天然气"};
+
+    private static Map<String, String> codeNameMap = new HashMap<>();;
 
     // 实时行情，供前端调用
     private Map<String, RealTimeMarketDto> realTimeMarketDtoMap = new HashMap<>();
@@ -62,7 +66,21 @@ public class GlobalMarket implements InitializingBean {
             marketPrice.setBottom(Float.MAX_VALUE);
             marketPrice.setTop(Float.MIN_VALUE);
             historyMarketPriceMap.put(code, marketPrice);
+
+            //初始化code和name对应关系
+            codeNameMap.put(code, name);
         }
+    }
+
+    public String getNameByCode(String code) {
+        if(code == null) {
+            return code;
+        }
+        String name = codeNameMap.get(code);
+        if (name == null) {
+            return code;
+        }
+        return name;
     }
 
     public RealTimeMarketDto getRealTimeMarketByCode(String code) {
@@ -71,6 +89,16 @@ public class GlobalMarket implements InitializingBean {
 
     public Map<String, RealTimeMarketDto> getAllRealTimeMarkets() {
         return this.realTimeMarketDtoMap;
+    }
+
+    public List<RealTimeMarketDto> getAllRealTimeMarketList(Integer limit, Integer offset) {
+        List<RealTimeMarketDto> list = new ArrayList<>();
+        if (this.realTimeMarketDtoMap != null) {
+            for (Map.Entry<String, RealTimeMarketDto> entry : this.realTimeMarketDtoMap.entrySet()) {
+                list.add(entry.getValue());
+            }
+        }
+        return list;
     }
 
     public Map<String, MarketPrice> getAllHistoryMarkets() {

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/invest-watcher.css" rel="stylesheet">
+    <link href="bootstrap-table-dist/bootstrap-table.min.css">
+    <link rel="icon" href="image/logo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon"/>
+    <title>Invest Watcher</title>
+</head>
+<body>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span style="color: red; font-weight: bold">Invest-Watcher</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="market.html">实时行情</a></li>
+                <li class="active"><a href="hold.html">持仓记录</a></li>
+                <li><a href="about.html">关于</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a id="userNameSpan"></a></li>
+                <li><a href="login.html">登录<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container">
+    <table id="mytable" ></table>
+</div> <!-- /container -->
+<br/><hr/>
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <form class="form-horizontal" id="operHold" autocomplete="off" class="col-md-9">
+                    <div id="legend" class="col-md-offset-4">
+                        <legend class="">仓位管理</legend>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">品    种</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="investId" id="investId">
+                                <option value="AURMB">纸黄金</option>
+                                <option value="XAU">现货黄金</option>
+                                <option value="AGRMB">纸白银</option>
+                                <option value="XAG">现货白银</option>
+                                <option value="WTICN">人民币北美油</option>
+                                <option value="WTIUS">美元北美油</option>
+                                <option value="WTICO">现货北美油</option>
+                                <option value="BRENTCN">人民币国际油</option>
+                                <option value="BRENTUS">美元国际油</option>
+                                <option value="BCO">现货国际油</option>
+                                <option value="GASCN">人民币天然气</option>
+                                <option value="GASUS">美元天然气</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">方   向</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="direction" id="direction">
+                                <option value="0">做多</option>
+                                <option value="1">做空</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">操    作</label>
+                        <div class="col-md-10">
+                            <select class="form-control" name="type" id="type">
+                                <option value="0">开仓</option>
+                                <option value="1">平仓</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="num" class="col-md-2 control-label">数    量</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="num" id="num" placeholder="请输入数量">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="price" class="col-md-2 control-label">价    格</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" name="price" id="price" placeholder="请输入价格">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-4">
+                            <button type="reset" class="btn btn-default pull-left">重 置</button>
+                            <button type="submit" class="btn btn-primary pull-right">确 认</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    </div>
+
+</div> <!-- /container -->
+
+<script src="jquery/jquery-1.12.4.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-validator-dist/js/bootstrapValidator.min.js"></script>
+<script src="bootstrap-table-dist/bootstrap-table.min.js"></script>
+<script src="bootstrap-table-dist/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="js/js.cookie.min.js"></script>
+<script src="js/invest-watcher-general.js"></script>
+<script src="js/invest-warcher-hold.js"></script>
+</body>
+</html>

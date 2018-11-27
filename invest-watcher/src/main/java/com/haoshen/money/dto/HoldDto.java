@@ -1,9 +1,6 @@
 package com.haoshen.money.dto;
 
 import java.io.Serializable;
-import java.util.List;
-
-import com.haoshen.money.entity.Hold;
 
 import lombok.Data;
 
@@ -12,7 +9,15 @@ public class HoldDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Hold hold;
-    private List<HoldOperRecordDto> records;      // 将操作记录由String转为HoldOperRecordDto
-
+    private Integer id;
+    private Integer userId;
+    private String investId;
+    private Integer direction;
+    private Float currentNum;
+    private Float currentPrice;
+    private Float profit;
+    private String records;
+    private String comment;
+    private Integer status;
 }
+

@@ -16,6 +16,10 @@ public interface HoldMapper {
 
     public Hold getById(@Param(value = "id") Integer id);
 
-    public List<Hold> getHoldByCondition(@Param(value = "userId") Integer userId, @Param(value = "investId") String
-            investId, @Param(value = "direction") Integer direction, @Param(value = "status") Integer status);
+    public List<Hold> getHoldByCondition(@Param(value = "userId") Integer userId, @Param(value = "investId") String investId,
+                                         @Param(value = "direction") Integer direction, @Param(value = "status") Integer status,
+                                         @Param(value = "offset") Integer offset, @Param(value = "rows") Integer rows);
+
+    public Integer getCountByCondition(@Param(value = "userId") Integer userId, @Param(value = "investId") String investId,
+                                         @Param(value = "direction") Integer direction, @Param(value = "status") Integer status);
 }

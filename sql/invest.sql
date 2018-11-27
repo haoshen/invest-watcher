@@ -265,12 +265,6 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 
 
-
-
-
-
-
-
-
+-- test 用户默认插入到第一条
 insert into `invest`.`invest_user` ( `password`, `status`, `updated_at`, `name`, `created_at`) 
   values ( 'test', '0', '2018-11-23', 'test', '2018-11-23');

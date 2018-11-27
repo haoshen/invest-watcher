@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,6 +13,7 @@ import com.haoshen.money.dto.ResultMessageDto;
 import com.haoshen.money.entity.User;
 import com.haoshen.money.manager.UserManager;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController {
