@@ -4,7 +4,7 @@
 ## 官方网站
 > [invest-watcher](http://94.191.80.104:8080)
 ## 运行测试
->&nbsp;&nbsp;&nbsp;&nbsp;首先执行数据库建库脚本sql/invest.sql，之后执行“java -jar invest-watcher-1.0-SNAPSHOT.jar"即可，或者将项目导入到IDE中运行。
+>&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中运行，运行SpringBoot的Application类。
 ## 特色功能
 ### 价格监控
 >&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher会从网络上抓取实时的行情数据，结合用户当前的持仓情况，一览式地展示各投资品种的实时价格及用户投资利润。    
