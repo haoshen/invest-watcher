@@ -24,6 +24,5 @@
 ![Image text](https://github.com/haoshen/invest-watcher/blob/master/screenshot/hold.png)
 ### 其他
 >&nbsp;&nbsp;&nbsp;&nbsp;其他页面包括帮助页面、用户登录页面等，省略
-## Contact Me
->&nbsp;&nbsp;&nbsp;&nbsp;项目基础功能已开发完成，目前处于维护及bug修复过程中。  
+## Contact Me  
 >&nbsp;&nbsp;&nbsp;&nbsp;如果您对本项目感兴趣，欢迎联系：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
