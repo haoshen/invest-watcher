@@ -17,7 +17,7 @@
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;更多投资品种持续开发中
 ## 运行测试
->&nbsp;&nbsp;&nbsp;&nbsp;首先执行数据库建库脚本sql/invest-watcher.sql，之后执行“java -jar invest-watcher-1.0-SNAPSHOT.jar"即可。运行截图如下：
+>&nbsp;&nbsp;&nbsp;&nbsp;首先执行数据库建库脚本sql/invest.sql，之后执行“java -jar invest-watcher-1.0-SNAPSHOT.jar"即可。运行截图如下：
 ### 实时价格监控
 ![Image text](https://github.com/haoshen/invest-watcher/blob/master/screenshot/market.png)
 ### 持仓记账管理
