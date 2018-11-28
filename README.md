@@ -20,7 +20,6 @@
 >   + 天然气   
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;更多投资品种持续开发中
-### 其他
->&nbsp;&nbsp;&nbsp;&nbsp;其他页面包括帮助页面、用户登录页面等，省略
-## Contact Me  
->&nbsp;&nbsp;&nbsp;&nbsp;如果您对本项目感兴趣，欢迎联系：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
+## More  
+>&nbsp;&nbsp;&nbsp;&nbsp;如果您对本项目感兴趣，或者想增加用户、添加新的投资品种等。    
+>&nbsp;&nbsp;&nbsp;&nbsp;欢迎联系：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
