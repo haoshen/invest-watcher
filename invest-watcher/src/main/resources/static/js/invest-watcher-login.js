@@ -76,7 +76,7 @@ function initLogin() {
         // console.log(form.serialize());	// name=root&password=123456
         $.ajax({
             type: "post",
-            url: "/user/verify",
+            url: "user/verify",
             data: form.serialize(),
             dataType: 'json',
             success: function (response) {

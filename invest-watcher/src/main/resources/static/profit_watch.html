@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/invest-watcher.css" rel="stylesheet">
+    <link href="bootstrap-table-dist/bootstrap-table.min.css">
     <link rel="icon" href="image/logo.jpg" type="image/x-icon" />
     <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon"/>
     <title>Invest Watcher</title>
@@ -39,7 +40,7 @@
                         <li><a href="hold_history.html">持仓记录</a></li>
                     </ul>
                 </li>
-                <li class="active"><a href="about.html">关于</a></li>
+                <li><a href="about.html">关于</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
@@ -52,23 +53,21 @@
 
 <div class="container">
 
-    <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
-        <h1>Invest-Watcher</h1>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Invest-watcher可以对股票、期货、贵金属等投资进行实时价格监控、持仓记账管理。记录的历史行情数据可供后续的机器学习、数据分析、量化投资等使用。</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;如您希望新增用户、添加新的投资品种，或者是对本项目感兴趣，欢迎联系我：
-        <span style="color: darkred;font-weight: bold">717632581@qq.com</span>（邮箱），<span style="color: darkred;font-weight: bold">woshiwanghao_hi</span>（微信）
-        </p>
-        <p>
-            <a class="btn btn-lg btn-primary" target="_blank" href="https://www.github.com/haoshen/invest-watcher" role="button">View GitHub Project &raquo;</a>
-        </p>
+    <div id="toolbar">
+        <button id="watcher" class="btn btn-primary">
+            开始监控
+        </button>
     </div>
 
-</div> <!-- /container -->
-
+    <table id="holdTable" ></table>
+</div>
 <script src="jquery/jquery-1.12.4.min.js"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-validator-dist/js/bootstrapValidator.min.js"></script>
+<script src="bootstrap-table-dist/bootstrap-table.min.js"></script>
+<script src="bootstrap-table-dist/locale/bootstrap-table-zh-CN.min.js"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/invest-watcher-general.js"></script>
+<script src="js/invest-watcher-profit-watch.js"></script>
 </body>
 </html>

@@ -26,8 +26,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li  class="active"><a href="market.html">实时行情</a></li>
-                <li><a href="hold.html">持仓记录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">实时监控 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="profit_watch.html">利润监控</a></li>
+                        <li><a href="market_watch.html">行情监控</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">仓位管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hold_operate.html">开/平仓</a></li>
+                        <li><a href="hold_history.html">持仓记录</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">关于</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -40,24 +52,7 @@
 </nav>
 
 <div class="container">
-
-    <div id="toolbar">
-        <button id="watcher" class="btn btn-primary">
-            开始监控
-        </button>
-    </div>
-
-    <table id="holdTable" ></table>
-</div>
-<br/><hr/>
-<div class="container">
-    <div id="toolbarMarket">
-        <button id="watcherMarket" class="btn btn-primary">
-            开始监控
-        </button>
-    </div>
-
-    <table id="marketTable" ></table>
+    <table id="mytable" ></table>
 </div> <!-- /container -->
 
 <script src="jquery/jquery-1.12.4.min.js"></script>
@@ -67,6 +62,6 @@
 <script src="bootstrap-table-dist/locale/bootstrap-table-zh-CN.min.js"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/invest-watcher-general.js"></script>
-<script src="js/invest-watcher-market.js"></script>
+<script src="js/invest-warcher-hold-history.js"></script>
 </body>
 </html>

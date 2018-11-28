@@ -26,8 +26,20 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="market.html">实时行情</a></li>
-                <li class="active"><a href="hold.html">持仓记录</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">实时监控 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="profit_watch.html">利润监控</a></li>
+                        <li><a href="market_watch.html">行情监控</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">仓位管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hold_operate.html">开/平仓</a></li>
+                        <li><a href="hold_history.html">持仓记录</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">关于</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -39,10 +51,6 @@
     </div>
 </nav>
 
-<div class="container">
-    <table id="mytable" ></table>
-</div> <!-- /container -->
-<br/><hr/>
 <div class="container">
 
     <div class="row">
@@ -124,6 +132,6 @@
 <script src="bootstrap-table-dist/locale/bootstrap-table-zh-CN.min.js"></script>
 <script src="js/js.cookie.min.js"></script>
 <script src="js/invest-watcher-general.js"></script>
-<script src="js/invest-warcher-hold.js"></script>
+<script src="js/invest-warcher-hold-operate.js"></script>
 </body>
 </html>
