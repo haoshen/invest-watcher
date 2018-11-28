@@ -11,7 +11,7 @@
  Target Server Version : 80012
  File Encoding         : utf-8
 
- Date: 11/26/2018 23:03:39 PM
+ Date: 11/28/2018 20:50:14 PM
 */
 
 SET NAMES utf8;
@@ -32,10 +32,10 @@ CREATE TABLE `invest_hold` (
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '状态:0持仓中/1已结束',
   `records` text COMMENT '交易记录',
   `comment` varchar(255) DEFAULT NULL COMMENT '交易备注',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '开始时间',
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `created_at` datetime NOT NULL COMMENT '开始时间',
+  `updated_at` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='持仓表';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='持仓表';
 
 -- ----------------------------
 --  Table structure for `invest_market_AGRMB`
@@ -49,9 +49,9 @@ CREATE TABLE `invest_market_AGRMB` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_AURMB`
@@ -65,9 +65,9 @@ CREATE TABLE `invest_market_AURMB` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_BCO`
@@ -81,9 +81,9 @@ CREATE TABLE `invest_market_BCO` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_BRENTCN`
@@ -97,9 +97,9 @@ CREATE TABLE `invest_market_BRENTCN` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_BRENTUS`
@@ -113,9 +113,9 @@ CREATE TABLE `invest_market_BRENTUS` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_GASCN`
@@ -129,9 +129,9 @@ CREATE TABLE `invest_market_GASCN` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_GASUS`
@@ -145,9 +145,9 @@ CREATE TABLE `invest_market_GASUS` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_WTICN`
@@ -161,9 +161,9 @@ CREATE TABLE `invest_market_WTICN` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_WTICO`
@@ -177,9 +177,9 @@ CREATE TABLE `invest_market_WTICO` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_WTIUS`
@@ -193,9 +193,9 @@ CREATE TABLE `invest_market_WTIUS` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_XAG`
@@ -209,9 +209,9 @@ CREATE TABLE `invest_market_XAG` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_market_XAU`
@@ -225,9 +225,9 @@ CREATE TABLE `invest_market_XAU` (
   `bottom` float DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 --  Table structure for `invest_operation_records`
@@ -241,10 +241,10 @@ CREATE TABLE `invest_operation_records` (
   `oper_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '操作类型:0开仓/1平仓',
   `oper_num` double NOT NULL DEFAULT '0' COMMENT '操作数量',
   `oper_price` double NOT NULL DEFAULT '0' COMMENT '操作价格',
-  `oper_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作的时间',
+  `oper_date` datetime NOT NULL COMMENT '操作的时间',
   `hold_id` int(11) NOT NULL DEFAULT '0' COMMENT '对应持仓记录的编号',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='操作记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='操作记录表';
 
 -- ----------------------------
 --  Table structure for `invest_user`
@@ -264,7 +264,6 @@ CREATE TABLE `invest_user` (
 SET FOREIGN_KEY_CHECKS = 1;
 
 
-
 -- test 用户默认插入到第一条
-insert into `invest`.`invest_user` ( `password`, `status`, `updated_at`, `name`, `created_at`) 
-  values ( 'test', '0', '2018-11-23', 'test', '2018-11-23');
+insert into `invest`.`invest_user` ( `id`, `password`, `status`, `updated_at`, `name`, `created_at`) 
+  values ( '1', 'test', '0', '2018-11-23', 'test', '2018-11-23');
