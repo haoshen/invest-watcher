@@ -2,7 +2,7 @@
 ## 简介
 >&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher可以对股票、期货、贵金属投资等进行实时价格监控、持仓记账管理，并记录历史行情数据以供后续的机器学习、数据分析、量化投资等使用。   
 ## 官方网站
-> [invest-watcher](http://94.191.80.104:8080)
+> [invest-watcher](http://94.191.80.104)
 ## 运行测试
 >&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中运行，运行SpringBoot的Application类。
 ## 特色功能
