@@ -1,6 +1,6 @@
 # invest-watcher
 ## 简介
->&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher对股票、期货、贵金属投资进行实时行情监控、利润监控、持仓管理，以及实时的存储历史行情数据以供后续分析使用  
+>&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher提供对股票、期货、贵金属等投资的实时行情监控、持仓盈利管理、历史数据存储分析等功能  
 ## 运行测试
 >&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中，启动SpringBoot。
 ## 网站
