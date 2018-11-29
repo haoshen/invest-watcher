@@ -14,8 +14,9 @@ public class MainController {
         return "forward:about.html";
     }
 
-    @RequestMapping(value="/test")
-    public String test() {
+    @RequestMapping(value="/health")
+    @ResponseBody
+    public String health() {
         return "OK";
     }
 
