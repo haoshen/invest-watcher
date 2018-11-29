@@ -22,4 +22,4 @@
 > &nbsp;&nbsp;&nbsp;&nbsp;更多投资品种持续开发中
 ## More  
 >&nbsp;&nbsp;&nbsp;&nbsp;如果您对本项目感兴趣，或者想新增网站账户、新增投资品种等，    
->&nbsp;&nbsp;&nbsp;&nbsp;欢迎联系：717632581@qq.com（Email），woshiwanghao_hi（WeChat）
+>&nbsp;&nbsp;&nbsp;&nbsp;欢迎联系：717632581@qq.com（Email）
