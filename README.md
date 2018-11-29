@@ -1,17 +1,17 @@
 # invest-watcher
 ## 简介
->&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher可以对股票、期货、贵金属投资等进行实时价格监控、持仓记账管理，并记录历史行情数据以供后续的机器学习、数据分析、量化投资等使用。   
-## 官方网站
-> [invest-watcher](http://www.hao123hao.xyz)
+>&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher对股票、期货、贵金属投资进行行情利润监控、持仓管理，同时实时存储历史行情数据供后续分析使用。    
 ## 运行测试
->&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中运行，运行SpringBoot的Application类。
+>&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中运行，启动SpringBoot。
+## 网站
+> [invest-watcher](http://www.hao123hao.xyz)
 ## 特色功能
 ### 价格监控
 >&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher会从网络上抓取实时的行情数据，结合用户当前的持仓情况，一览式地展示各投资品种的实时价格及用户投资利润。    
 ### 持仓记账管理
 >&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher根据用户开/平仓、做多/空操作实时更新持仓记录。用户每次投资活动的基本信息，包括：操作数量、操作价格、操作利润、操作后的仓位及均价等。用户还可以对某次投资情况进行总结并记录到相应的持仓记录中。
 ### 数据分析   
->&nbsp;&nbsp;&nbsp;&nbsp;在实时监控行情数据的同时，invest-watcher会周期性（目前为分钟级别）的将投资品种行情数据进行保存。后续可以根据这些历史行情数据，使用数据分析、机器学习、量化投资等技术进行分析。invest-watcher后期可能推出对投资模型进行实时验证评估等功能。
+>&nbsp;&nbsp;&nbsp;&nbsp;在实时监控行情数据的同时，invest-watcher会周期性（目前为分钟级别）的将投资品种行情数据进行保存。后续可以根据这些历史行情数据，使用数据分析、机器学习、量化投资等技术进行分析。
 ### 支持品种
 >+ 工商银行
 >   + 黄金
