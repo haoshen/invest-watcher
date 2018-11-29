@@ -66,6 +66,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.haoshen.money.Application</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
