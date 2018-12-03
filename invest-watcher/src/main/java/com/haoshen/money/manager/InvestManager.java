@@ -45,6 +45,14 @@ public class InvestManager {
     // 各个用户对应的total
     private Map<Integer, Integer> holdCacheTotalMap = new HashMap<>();
 
+    public Hold getHoldById(Integer userId, Integer holdId) {
+        Hold hold = holdService.getById(holdId);
+        if (hold == null || hold.getUserId() != userId) {
+            return null;
+        }
+        return hold;
+    }
+
     // 展示所有历史仓位
     public JSONObject getAllHolds(Integer userId, Integer limit, Integer offset) {
         JSONObject jsonObject = new JSONObject();
@@ -52,7 +60,7 @@ public class InvestManager {
             return null;
         }
         List<HoldDto> holdDtos = new ArrayList<>();
-        List<Hold> holds = holdService.getHoldByCondition(userId, null, null, null, true, limit, offset);
+        List<Hold> holds = holdService.getHoldByConditionWithoutRecords(userId, null, null, null, true, limit, offset);
         for(Hold hold : holds) {
             HoldDto dto = new HoldDto();
             dto.setProfit(hold.getProfit());
@@ -62,7 +70,6 @@ public class InvestManager {
             //将code改为name
             dto.setInvestId(globalMarket.getNameByCode(hold.getInvestId()));
             dto.setComment(hold.getComment());
-            dto.setRecords(hold.getRecords());
             dto.setUserId(hold.getUserId());
             dto.setDirection(hold.getDirection());
             dto.setStatus(hold.getStatus());

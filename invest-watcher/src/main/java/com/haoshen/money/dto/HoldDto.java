@@ -16,7 +16,6 @@ public class HoldDto implements Serializable {
     private Float currentNum;
     private Float currentPrice;
     private Float profit;
-    private String records;
     private String comment;
     private Integer status;
 }

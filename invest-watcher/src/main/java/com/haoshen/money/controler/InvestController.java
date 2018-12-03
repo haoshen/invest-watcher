@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSONObject;
 import com.haoshen.money.dto.AccountDto;
 import com.haoshen.money.dto.ResultMessageDto;
+import com.haoshen.money.entity.Hold;
 import com.haoshen.money.manager.InvestManager;
 
 @CrossOrigin
@@ -19,6 +20,14 @@ public class InvestController {
 
     @Resource
     private InvestManager investManager;
+
+    @RequestMapping(value = "/getHoldById")
+    public ResultMessageDto<Hold> getAllHolds(@RequestParam Integer userId,
+                                              @RequestParam Integer holdId) {
+        ResultMessageDto<Hold> result = new ResultMessageDto<>();
+        result.setResult(investManager.getHoldById(userId, holdId));
+        return result;
+    }
 
     @RequestMapping(value = "/allHolds")
     public JSONObject getAllHolds(@RequestParam Integer userId,

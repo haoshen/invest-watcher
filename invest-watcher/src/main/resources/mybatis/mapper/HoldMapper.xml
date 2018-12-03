@@ -71,6 +71,26 @@
         </if>
 	</select>
 
+    <select id="getHoldByConditionWithoutRecords" resultMap="holdMap">
+        select id, user_id, invest_id, direction, current_price, current_num, profit, status, comment, created_at,
+        updated_at
+        from invest_hold
+        where user_id = #{userId}
+        <if test="investId != null">
+            and invest_id = #{investId}
+        </if>
+        <if test="direction != null">
+            and direction = #{direction}
+        </if>
+        <if test="status != null">
+            and status = #{status}
+        </if>
+        order by status, created_at
+        <if test="offset != null and rows != null">
+            limit #{offset}, #{rows}
+        </if>
+    </select>
+
     <select id="getCountByCondition" resultType="java.lang.Integer">
         select count(*) from invest_hold
         where user_id = #{userId}
