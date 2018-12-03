@@ -150,7 +150,27 @@ function statusFormatter(value) {
 }
 
 function detailFormatter(index, row) {
-    return recordsFormatter(row.records);
+    var records = null;
+    $.ajax({
+        type: 'GET',
+        url: "invest/getHoldById",
+        data: {
+            userId: Cookies.get("user_id"),
+            holdId: row.id,
+        },
+        dataType: "json",
+        async: false,
+        success: function (response) {
+            if(response.result) {
+                records = response.result.records;
+            }
+        }
+    });
+    if(records) {
+        return recordsFormatter(records);
+    } else {
+        return "<span style='color: red;'>No Records</span>";
+    }
 }
 
 
