@@ -2,7 +2,7 @@
 ## 简介
 >&nbsp;&nbsp;&nbsp;&nbsp;invest-watcher提供对股票、期货、贵金属等投资品种的实时行情监控、持仓盈利管理、历史数据存储分析等功能  
 ## 运行测试
->&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中，启动SpringBoot。
+>&nbsp;&nbsp;&nbsp;&nbsp;执行数据库建库脚本sql/invest.sql，将项目Maven导入到IDE中执行（或直接执行打包后的jar文件）。
 ## 网站截图
 ![image](https://github.com/haoshen/invest-watcher/blob/master/about.png)
 ## 特色功能
